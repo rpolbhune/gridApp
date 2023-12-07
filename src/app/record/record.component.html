@@ -1,0 +1,24 @@
+
+<table class="table table-striped">
+    <thead>
+        <th>First</th>
+        <th>Last</th>
+        <th>Email</th>
+        <th>address</th>
+        <th>balance</th>
+        <th>created</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of dataArray | paginate: { itemsPerPage: 6, currentPage: p }">
+            <td>{{item.first}}</td>
+            <td>{{item.last}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.address}}</td>
+            <td>{{item.balance}}</td>
+            <td>{{item.created}}</td>
+        </tr>
+        
+    </tbody>  
+    <pagination-controls  (pageChange)="p = $event"></pagination-controls>
+
+</table>
